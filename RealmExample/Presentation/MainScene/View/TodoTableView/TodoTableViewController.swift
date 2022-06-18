@@ -7,10 +7,18 @@
 
 import UIKit
 
-class TodoTableViewController: UITableViewController {
+final class TodoTableViewController: UITableViewController {
+    
+    private var viewModel: MainViewModel
+    
+    required init?(coder: NSCoder) {
+        self.viewModel = DefaultMainViewModel()
+        super.init(coder: coder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.todoList.bind { [weak self] _ in self?.tableView.reloadData() }
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -25,14 +33,13 @@ class TodoTableViewController: UITableViewController {
 extension TodoTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return viewModel.todoList.value.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         
-        cell.textLabel?.text = indexPath.description
+        cell.textLabel?.text = viewModel.todoList.value[indexPath.row].title
         
         return cell
     }

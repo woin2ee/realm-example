@@ -15,6 +15,13 @@
 		E8C73514285DE44D00FA3DFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8C73513285DE44D00FA3DFB /* Assets.xcassets */; };
 		E8C73517285DE44D00FA3DFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8C73515285DE44D00FA3DFB /* LaunchScreen.storyboard */; };
 		E8C73525285DF3D400FA3DFB /* TodoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C73524285DF3D400FA3DFB /* TodoTableViewController.swift */; };
+		E8C7352E285E00CC00FA3DFB /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7352D285E00CC00FA3DFB /* TodoItem.swift */; };
+		E8C73530285E061A00FA3DFB /* TodoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7352F285E061A00FA3DFB /* TodoRepository.swift */; };
+		E8C73533285E0BEB00FA3DFB /* DefaultTodoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C73532285E0BEB00FA3DFB /* DefaultTodoRepository.swift */; };
+		E8C73537285E0DEF00FA3DFB /* TodoStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C73536285E0DEF00FA3DFB /* TodoStorage.swift */; };
+		E8C7353A285E0EFE00FA3DFB /* RealmTodoStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C73539285E0EFE00FA3DFB /* RealmTodoStorage.swift */; };
+		E8C7353D285E1C4E00FA3DFB /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7353C285E1C4E00FA3DFB /* MainViewModel.swift */; };
+		E8C73542285E1ED000FA3DFB /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C73541285E1ED000FA3DFB /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +37,13 @@
 		E8C73516285DE44D00FA3DFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8C73518285DE44D00FA3DFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = RealmExample/Resource/Info.plist; sourceTree = SOURCE_ROOT; };
 		E8C73524285DF3D400FA3DFB /* TodoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewController.swift; sourceTree = "<group>"; };
+		E8C7352D285E00CC00FA3DFB /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
+		E8C7352F285E061A00FA3DFB /* TodoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRepository.swift; sourceTree = "<group>"; };
+		E8C73532285E0BEB00FA3DFB /* DefaultTodoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTodoRepository.swift; sourceTree = "<group>"; };
+		E8C73536285E0DEF00FA3DFB /* TodoStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoStorage.swift; sourceTree = "<group>"; };
+		E8C73539285E0EFE00FA3DFB /* RealmTodoStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTodoStorage.swift; sourceTree = "<group>"; };
+		E8C7353C285E1C4E00FA3DFB /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		E8C73541285E1ED000FA3DFB /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +98,8 @@
 			children = (
 				E8C7351E285DE46900FA3DFB /* Application */,
 				E8C73520285DF22D00FA3DFB /* Presentation */,
+				E8C7352A285E004D00FA3DFB /* Domain */,
+				E8C73528285DFF6E00FA3DFB /* Data */,
 				E8C7351F285DF20100FA3DFB /* Resource */,
 			);
 			path = RealmExample;
@@ -113,6 +129,7 @@
 			children = (
 				E8C73521285DF23700FA3DFB /* MainScene */,
 				E8C73523285DF34000FA3DFB /* ViewModel */,
+				E8C7353E285E1E8E00FA3DFB /* Utils */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -138,6 +155,7 @@
 		E8C73523285DF34000FA3DFB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E8C7353C285E1C4E00FA3DFB /* MainViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -148,6 +166,97 @@
 				E8C73524285DF3D400FA3DFB /* TodoTableViewController.swift */,
 			);
 			path = TodoTableView;
+			sourceTree = "<group>";
+		};
+		E8C73528285DFF6E00FA3DFB /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E8C73531285E0BBC00FA3DFB /* Repositories */,
+				E8C7353B285E14CF00FA3DFB /* Network */,
+				E8C73529285DFF8E00FA3DFB /* PersistentStorages */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E8C73529285DFF8E00FA3DFB /* PersistentStorages */ = {
+			isa = PBXGroup;
+			children = (
+				E8C73535285E0DAF00FA3DFB /* TodoStorage */,
+			);
+			path = PersistentStorages;
+			sourceTree = "<group>";
+		};
+		E8C7352A285E004D00FA3DFB /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				E8C7352B285E005500FA3DFB /* Entities */,
+				E8C7352C285E007100FA3DFB /* Repositories */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		E8C7352B285E005500FA3DFB /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				E8C7352D285E00CC00FA3DFB /* TodoItem.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		E8C7352C285E007100FA3DFB /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				E8C7352F285E061A00FA3DFB /* TodoRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		E8C73531285E0BBC00FA3DFB /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				E8C73532285E0BEB00FA3DFB /* DefaultTodoRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		E8C73534285E0D9600FA3DFB /* RealmStorage */ = {
+			isa = PBXGroup;
+			children = (
+				E8C73539285E0EFE00FA3DFB /* RealmTodoStorage.swift */,
+			);
+			path = RealmStorage;
+			sourceTree = "<group>";
+		};
+		E8C73535285E0DAF00FA3DFB /* TodoStorage */ = {
+			isa = PBXGroup;
+			children = (
+				E8C73536285E0DEF00FA3DFB /* TodoStorage.swift */,
+				E8C73534285E0D9600FA3DFB /* RealmStorage */,
+				E8C73538285E0EDA00FA3DFB /* CoreDataStorage */,
+			);
+			path = TodoStorage;
+			sourceTree = "<group>";
+		};
+		E8C73538285E0EDA00FA3DFB /* CoreDataStorage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreDataStorage;
+			sourceTree = "<group>";
+		};
+		E8C7353B285E14CF00FA3DFB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E8C7353E285E1E8E00FA3DFB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E8C73541285E1ED000FA3DFB /* Observable.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,10 +374,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8C73542285E1ED000FA3DFB /* Observable.swift in Sources */,
+				E8C7352E285E00CC00FA3DFB /* TodoItem.swift in Sources */,
 				E8C7350F285DE44B00FA3DFB /* MainViewController.swift in Sources */,
+				E8C73530285E061A00FA3DFB /* TodoRepository.swift in Sources */,
 				E8C73525285DF3D400FA3DFB /* TodoTableViewController.swift in Sources */,
 				E8C7350B285DE44B00FA3DFB /* AppDelegate.swift in Sources */,
+				E8C7353D285E1C4E00FA3DFB /* MainViewModel.swift in Sources */,
+				E8C73533285E0BEB00FA3DFB /* DefaultTodoRepository.swift in Sources */,
 				E8C7350D285DE44B00FA3DFB /* SceneDelegate.swift in Sources */,
+				E8C73537285E0DEF00FA3DFB /* TodoStorage.swift in Sources */,
+				E8C7353A285E0EFE00FA3DFB /* RealmTodoStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
