@@ -27,7 +27,7 @@
 		E8C73511285DE44B00FA3DFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E8C73513285DE44D00FA3DFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8C73516285DE44D00FA3DFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E8C73518285DE44D00FA3DFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8C73518285DE44D00FA3DFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = RealmExample/Resource/Info.plist; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +56,6 @@
 				6FFB85E1240DDEA062ECC0CC /* Pods-RealmExample.debug.xcconfig */,
 				12CDB99CFDDEBB1BA98A4CA4 /* Pods-RealmExample.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -82,11 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				E8C7351E285DE46900FA3DFB /* Application */,
-				E8C7350E285DE44B00FA3DFB /* MainViewController.swift */,
-				E8C73510285DE44B00FA3DFB /* Main.storyboard */,
-				E8C73513285DE44D00FA3DFB /* Assets.xcassets */,
-				E8C73515285DE44D00FA3DFB /* LaunchScreen.storyboard */,
-				E8C73518285DE44D00FA3DFB /* Info.plist */,
+				E8C73520285DF22D00FA3DFB /* Presentation */,
+				E8C7351F285DF20100FA3DFB /* Resource */,
 			);
 			path = RealmExample;
 			sourceTree = "<group>";
@@ -98,6 +94,33 @@
 				E8C7350C285DE44B00FA3DFB /* SceneDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		E8C7351F285DF20100FA3DFB /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				E8C73513285DE44D00FA3DFB /* Assets.xcassets */,
+				E8C73515285DE44D00FA3DFB /* LaunchScreen.storyboard */,
+				E8C73518285DE44D00FA3DFB /* Info.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		E8C73520285DF22D00FA3DFB /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				E8C73521285DF23700FA3DFB /* MainScene */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		E8C73521285DF23700FA3DFB /* MainScene */ = {
+			isa = PBXGroup;
+			children = (
+				E8C7350E285DE44B00FA3DFB /* MainViewController.swift */,
+				E8C73510285DE44B00FA3DFB /* Main.storyboard */,
+			);
+			path = MainScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,7 +390,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2AVC8X7323;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RealmExample/Info.plist;
+				INFOPLIST_FILE = RealmExample/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -397,7 +420,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2AVC8X7323;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RealmExample/Info.plist;
+				INFOPLIST_FILE = RealmExample/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
