@@ -35,6 +35,5 @@ class TodoTableViewCell: UITableViewCell {
 private let dateFormatter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.dateFormat = "yy/MM/dd"
-//    formatter.dateStyle = .medium
     return formatter
 }()
