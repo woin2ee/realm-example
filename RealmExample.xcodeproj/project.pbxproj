@@ -138,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				E8C73521285DF23700FA3DFB /* MainScene */,
-				E8C73523285DF34000FA3DFB /* ViewModel */,
 				E8C7353E285E1E8E00FA3DFB /* Utils */,
 			);
 			path = Presentation;
@@ -148,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				E8C73522285DF33A00FA3DFB /* View */,
+				E8C73523285DF34000FA3DFB /* ViewModel */,
 			);
 			path = MainScene;
 			sourceTree = "<group>";
