@@ -23,14 +23,24 @@ final class DefaultMainViewModel: MainViewModel {
     
     // MARK: - Output
     
-    var todoList: Observable<[TodoItem]> {
-        .init([TodoItem(title: "Title1"), TodoItem(title: "Title2"), TodoItem(title: "Title3")])
-    }
+    var todoList: Observable<[TodoItem]> = Observable([])
     
     // MARK: - Init
     
     init(todoRepository: TodoRepository = DefaultTodoRepository()) {
         self.todoRepository = todoRepository
+        initTodoList()
+    }
+    
+    func initTodoList() {
+        todoRepository.fetchAllTodoList { result in
+            switch result {
+            case .success(let list):
+                self.todoList.value = list
+            case .failure(_):
+                return
+            }
+        }
     }
     
     // MARK: - Input

@@ -172,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				E8C73531285E0BBC00FA3DFB /* Repositories */,
-				E8C7353B285E14CF00FA3DFB /* Network */,
 				E8C73529285DFF8E00FA3DFB /* PersistentStorages */,
 			);
 			path = Data;
@@ -242,13 +241,6 @@
 			children = (
 			);
 			path = CoreDataStorage;
-			sourceTree = "<group>";
-		};
-		E8C7353B285E14CF00FA3DFB /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		E8C7353E285E1E8E00FA3DFB /* Utils */ = {

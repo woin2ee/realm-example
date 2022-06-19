@@ -10,7 +10,13 @@ import RealmSwift
 
 final class RealmTodoStorage {
     
-    let realm = try! Realm()
+    private var realm: Realm
+    
+    init() {
+        self.realm = try! Realm()
+        
+        print(realm.configuration.fileURL!)
+    }
 }
 
 extension RealmTodoStorage: TodoStorage {
