@@ -20,20 +20,9 @@ class TodoTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setCell(date: Date?, title: String, importance: Importance) {
-        if let date = date {
-            lblDate.text = dateFormatter.string(from: date)
-        } else {
-            lblDate.text = "날짜 없음"
-        }
-        
-        lblTitle.text = title
-        lblImportance.text = importance.rawValue
+    func fill(todoItem: TodoItemDTO) {
+        lblDate.text = todoItem.date
+        lblTitle.text = todoItem.title
+        lblImportance.text = todoItem.importance
     }
 }
-
-private let dateFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateFormat = "yy/MM/dd"
-    return formatter
-}()

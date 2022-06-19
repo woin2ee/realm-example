@@ -12,7 +12,7 @@ protocol MainViewModelInput {
 }
 
 protocol MainViewModelOutput {
-    var todoList: Observable<[TodoItem]> { get }
+    var todoList: Observable<[TodoItemDTO]> { get }
 }
 
 protocol MainViewModel: MainViewModelInput, MainViewModelOutput {}
@@ -23,7 +23,7 @@ final class DefaultMainViewModel: MainViewModel {
     
     // MARK: - Output
     
-    var todoList: Observable<[TodoItem]> = Observable([])
+    var todoList: Observable<[TodoItemDTO]> = Observable([])
     
     // MARK: - Init
     
@@ -36,7 +36,9 @@ final class DefaultMainViewModel: MainViewModel {
         todoRepository.fetchAllTodoList { result in
             switch result {
             case .success(let list):
-                self.todoList.value = list
+                self.todoList.value = list.map {
+                    TodoItemDTO.create(date: $0.date, title: $0.title, detail: $0.detail, importance: $0.importance)
+                }
             case .failure(_):
                 return
             }
