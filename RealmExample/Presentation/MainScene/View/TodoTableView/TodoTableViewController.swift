@@ -43,4 +43,11 @@ extension TodoTableViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Detail", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        present(vc, animated: true)
+        vc.setupView(item: viewModel.todoList.value[indexPath.row])
+    }
 }

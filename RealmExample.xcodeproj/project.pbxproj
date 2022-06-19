@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C9BBB495954B81F997C88C5E /* Pods_RealmExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0278DD0A9C95CAA1FEAACAC /* Pods_RealmExample.framework */; };
 		E881AEB6285EF3D400351543 /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881AEB5285EF3D400351543 /* TodoTableViewCell.swift */; };
+		E881AEBE285F374D00351543 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E881AEBD285F374D00351543 /* Detail.storyboard */; };
+		E881AEC0285F377300351543 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881AEBF285F377300351543 /* DetailViewController.swift */; };
 		E881AEC4285F54D600351543 /* TodoItemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881AEC3285F54D600351543 /* TodoItemDTO.swift */; };
 		E8C7350B285DE44B00FA3DFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7350A285DE44B00FA3DFB /* AppDelegate.swift */; };
 		E8C7350D285DE44B00FA3DFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7350C285DE44B00FA3DFB /* SceneDelegate.swift */; };
@@ -31,6 +33,8 @@
 		6FFB85E1240DDEA062ECC0CC /* Pods-RealmExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmExample.debug.xcconfig"; path = "Target Support Files/Pods-RealmExample/Pods-RealmExample.debug.xcconfig"; sourceTree = "<group>"; };
 		B0278DD0A9C95CAA1FEAACAC /* Pods_RealmExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealmExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E881AEB5285EF3D400351543 /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
+		E881AEBD285F374D00351543 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		E881AEBF285F377300351543 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E881AEC3285F54D600351543 /* TodoItemDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemDTO.swift; sourceTree = "<group>"; };
 		E8C73507285DE44B00FA3DFB /* RealmExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8C7350A285DE44B00FA3DFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +91,23 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		E881AEBA285F372800351543 /* DetailScene */ = {
+			isa = PBXGroup;
+			children = (
+				E881AEBB285F373200351543 /* View */,
+			);
+			path = DetailScene;
+			sourceTree = "<group>";
+		};
+		E881AEBB285F373200351543 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E881AEBF285F377300351543 /* DetailViewController.swift */,
+				E881AEBD285F374D00351543 /* Detail.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E8C734FE285DE44B00FA3DFB = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				E8C73521285DF23700FA3DFB /* MainScene */,
+				E881AEBA285F372800351543 /* DetailScene */,
 				E8C7353E285E1E8E00FA3DFB /* Utils */,
 			);
 			path = Presentation;
@@ -320,6 +342,7 @@
 				E8C73517285DE44D00FA3DFB /* LaunchScreen.storyboard in Resources */,
 				E8C73514285DE44D00FA3DFB /* Assets.xcassets in Resources */,
 				E8C73512285DE44B00FA3DFB /* Main.storyboard in Resources */,
+				E881AEBE285F374D00351543 /* Detail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +395,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E881AEC0285F377300351543 /* DetailViewController.swift in Sources */,
 				E8C73542285E1ED000FA3DFB /* Observable.swift in Sources */,
 				E8C7352E285E00CC00FA3DFB /* TodoItem.swift in Sources */,
 				E8C7350F285DE44B00FA3DFB /* MainViewController.swift in Sources */,
