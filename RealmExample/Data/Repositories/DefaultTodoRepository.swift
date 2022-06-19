@@ -13,10 +13,6 @@ final class DefaultTodoRepository {
     init(persistentStorage: TodoStorage = RealmTodoStorage()) {
         self.persistentStorage = persistentStorage
     }
-    
-    func changePersistentStorage(to persistentStorage: TodoStorage) {
-        self.persistentStorage = persistentStorage
-    }
 }
 
 extension DefaultTodoRepository: TodoRepository {

@@ -37,9 +37,13 @@ extension TodoTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell") as! TodoTableViewCell
         
-        cell.textLabel?.text = viewModel.todoList.value[indexPath.row].title
+        cell.setCell(
+            date: viewModel.todoList.value[indexPath.row].date,
+            title: viewModel.todoList.value[indexPath.row].title,
+            importance: viewModel.todoList.value[indexPath.row].importanceEnum
+        )
         
         return cell
     }
