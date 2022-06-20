@@ -8,19 +8,21 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    @IBOutlet private weak var lblDate: UILabel!
-    @IBOutlet private weak var lblImportance: UILabel!
-    @IBOutlet private weak var lblTitle: UILabel!
-    @IBOutlet private weak var lblDetail: UILabel!
+    
+    @IBOutlet weak var edtTitle: UITextView!
+    @IBOutlet weak var edtDetail: UITextView!
+    @IBOutlet weak var btnImportance: UIButton!
+    @IBOutlet weak var lblDate: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     func setupView(item: TodoItemDTO) {
+        edtTitle.text = item.title
+        edtDetail.text = item.detail
+        btnImportance.setTitle(item.importance, for: .normal)
         lblDate.text = item.date
-        lblImportance.text = item.importance
-        lblTitle.text = item.title
-        lblDetail.text = item.detail
     }
 }
