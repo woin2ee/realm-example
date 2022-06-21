@@ -14,7 +14,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var btnImportance: UIButton!
     @IBOutlet weak var lblDate: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

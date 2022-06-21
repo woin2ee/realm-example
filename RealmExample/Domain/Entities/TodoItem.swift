@@ -34,5 +34,5 @@ enum Importance: String {
     case high = "높음"
     case middle = "중간"
     case low = "낮음"
-    case none = ""
+    case none = "없음"
 }

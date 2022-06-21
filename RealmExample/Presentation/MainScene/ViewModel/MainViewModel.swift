@@ -37,7 +37,7 @@ final class DefaultMainViewModel: MainViewModel {
             switch result {
             case .success(let list):
                 self.todoList.value = list.map {
-                    TodoItemDTO.create(date: $0.date, title: $0.title, detail: $0.detail, importance: $0.importance)
+                    TodoItemDTO.create(date: $0.date, title: $0.title, detail: $0.detail, importance: $0.importanceEnum)
                 }
             case .failure(_):
                 return

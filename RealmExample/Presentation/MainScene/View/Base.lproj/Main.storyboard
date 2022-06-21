@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tc9-9R-2Vt">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="RealmExample" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7n-ed-5rl">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <connections>
                                     <segue destination="gtG-xh-i4T" kind="embed" id="xkn-f7-P3L"/>
                                 </connections>
@@ -32,29 +32,35 @@
                             <constraint firstItem="t7n-ed-5rl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rQo-Oa-jrq"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="List" id="COB-tr-dDE">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus.circle" catalog="system" id="uhf-oN-KUj">
+                            <connections>
+                                <action selector="addButtonClicked:" destination="BYZ-38-t0r" id="ZQt-ip-nji"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="125"/>
+            <point key="canvasLocation" x="984.05797101449286" y="124.55357142857142"/>
         </scene>
         <!--Todo Table View Controller-->
         <scene sceneID="jWi-rZ-9kW">
             <objects>
                 <tableViewController id="gtG-xh-i4T" customClass="TodoTableViewController" customModule="RealmExample" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="d1a-59-f0c">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" id="d1a-59-f0c">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TodoCell" id="afg-fj-6f8" customClass="TodoTableViewCell" customModule="RealmExample" customModuleProvider="target">
-                                <rect key="frame" x="20" y="49.5" width="374" height="35.5"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="35.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="afg-fj-6f8" id="vn9-96-Sz3">
-                                    <rect key="frame" x="0.0" y="0.0" width="345.5" height="35.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="385.5" height="35.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iSp-Yq-cBV">
-                                            <rect key="frame" x="10" y="0.0" width="325.5" height="35.5"/>
+                                            <rect key="frame" x="10" y="0.0" width="365.5" height="35.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="2022-06-19" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xv1-bc-kOA">
                                                     <rect key="frame" x="0.0" y="7.5" width="93.5" height="20.5"/>
@@ -63,13 +69,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Test-title-long-long-long-long-long" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Tp-Ws-HgA">
-                                                    <rect key="frame" x="103.5" y="7.5" width="182.5" height="20.5"/>
+                                                    <rect key="frame" x="103.5" y="7.5" width="222.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="중간" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arh-a8-Lgp">
-                                                    <rect key="frame" x="296" y="7.5" width="29.5" height="20.5"/>
+                                                    <rect key="frame" x="336" y="7.5" width="29.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" systemColor="systemOrangeColor"/>
                                                     <nil key="highlightedColor"/>
@@ -102,10 +108,29 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W2N-MJ-EMb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="895.6521739130435" y="124.55357142857142"/>
+            <point key="canvasLocation" x="1848" y="142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Yk6-Ft-S1B">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5TC-Zf-mrr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tc9-9R-2Vt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="N3a-h1-LVq">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="nhv-8E-hn1"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="73.913043478260875" y="124.55357142857142"/>
         </scene>
     </scenes>
     <resources>
+        <image name="plus.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
