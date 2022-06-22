@@ -27,8 +27,17 @@ extension RealmTodoStorage: TodoStorage {
         }
     }
     
-    func fetchAllTodoList(_ completion: @escaping (Result<[TodoItem], Error>) -> Void) {
+    func bind(behavior: @escaping (Results<TodoItem>) -> Void) -> NotificationToken {
         let todoList = realm.objects(TodoItem.self)
-        completion(.success(todoList.map{ $0 }))
+        return todoList.observe { changes in
+            switch changes {
+            case .initial(let todoList):
+                behavior(todoList)
+            case .update(let todoList, _, _, _):
+                behavior(todoList)
+            case .error(let error):
+                fatalError(error.localizedDescription)
+            }
+        }
     }
 }

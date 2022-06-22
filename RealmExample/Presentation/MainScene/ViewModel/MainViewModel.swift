@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 protocol MainViewModelInput {
     
@@ -20,6 +21,7 @@ protocol MainViewModel: MainViewModelInput, MainViewModelOutput {}
 final class DefaultMainViewModel: MainViewModel {
     
     private var todoRepository: TodoRepository
+    private var token: NotificationToken?
     
     // MARK: - Output
     
@@ -29,20 +31,26 @@ final class DefaultMainViewModel: MainViewModel {
     
     init(todoRepository: TodoRepository = DefaultTodoRepository()) {
         self.todoRepository = todoRepository
-        initTodoList()
+        bindTodoList()
     }
     
-    func initTodoList() {
-        todoRepository.fetchAllTodoList { result in
-            switch result {
-            case .success(let list):
-                self.todoList.value = list.map {
-                    TodoItemDTO.create(date: $0.date, title: $0.title, detail: $0.detail, importance: $0.importanceEnum)
-                }
-            case .failure(_):
-                return
-            }
+    func bindTodoList() {
+        self.token = todoRepository.bind(behavior: mapToDTO(by:))
+    }
+    
+    func mapToDTO(by todoList: Results<TodoItem>) {
+        self.todoList.value = todoList.map {
+            TodoItemDTO.create(
+                date: $0.date,
+                title: $0.title,
+                detail: $0.detail,
+                importance: $0.importanceEnum
+            )
         }
+    }
+    
+    deinit {
+        self.token?.invalidate()
     }
     
     // MARK: - Input

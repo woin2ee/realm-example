@@ -21,13 +21,19 @@ final class DefaultDetailViewModel: DetailViewModel {
     
     private var todoRepository: TodoRepository
     
+    // MARK: - Output
+    
     var todoItem: Observable<TodoItemDTO>
+    
+    // MARK: - Init
     
     init(todoRepositoy: TodoRepository = DefaultTodoRepository(),
          todoItem: Observable<TodoItemDTO> = .init(.createEmpty())) {
         self.todoRepository = todoRepositoy
         self.todoItem = todoItem
     }
+    
+    // MARK: - Input
     
     func didSave(todoItem: TodoItemDTO) {
         todoRepository.save(todoItem: todoItem.toDomain())

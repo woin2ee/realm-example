@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 final class DefaultTodoRepository {
     private var persistentStorage: TodoStorage
@@ -21,7 +22,7 @@ extension DefaultTodoRepository: TodoRepository {
         persistentStorage.save(todoItem: item)
     }
     
-    func fetchAllTodoList(_ completion: @escaping (Result<[TodoItem], Error>) -> Void) {
-        persistentStorage.fetchAllTodoList(completion)
+    func bind(behavior: @escaping (Results<TodoItem>) -> Void) -> NotificationToken {
+        persistentStorage.bind(behavior: behavior)
     }
 }

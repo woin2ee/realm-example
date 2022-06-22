@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import RealmSwift
 
 protocol TodoStorage {
     func save(todoItem item: TodoItem)
-    func fetchAllTodoList(_ completion: @escaping (Result<[TodoItem], Error>) -> Void)
+    func bind(behavior: @escaping (Results<TodoItem>) -> Void) -> NotificationToken
 }

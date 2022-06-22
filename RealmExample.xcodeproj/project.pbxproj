@@ -119,6 +119,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		E8A2366D28635CA700E0258A /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				E881AEC3285F54D600351543 /* TodoItemDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
 		E8C734FE285DE44B00FA3DFB = {
 			isa = PBXGroup;
 			children = (
@@ -201,7 +209,6 @@
 			isa = PBXGroup;
 			children = (
 				E8C7353C285E1C4E00FA3DFB /* MainViewModel.swift */,
-				E881AEC3285F54D600351543 /* TodoItemDTO.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -285,6 +292,7 @@
 		E8C7353E285E1E8E00FA3DFB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E8A2366D28635CA700E0258A /* DTO */,
 				E8C73541285E1ED000FA3DFB /* Observable.swift */,
 			);
 			path = Utils;

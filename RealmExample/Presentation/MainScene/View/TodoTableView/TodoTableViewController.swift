@@ -18,7 +18,12 @@ final class TodoTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.todoList.bind { [weak self] _ in self?.tableView.reloadData() }
+        viewModel.todoList.bind { [weak self] _ in self?.reloadTable() }
+    }
+    
+    private func reloadTable() {
+        tableView.reloadData()
+        print("reload")
     }
 }
 
@@ -32,9 +37,7 @@ extension TodoTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCell") as! TodoTableViewCell
-        
         cell.fill(todoItem: viewModel.todoList.value[indexPath.row])
-        
         return cell
     }
     

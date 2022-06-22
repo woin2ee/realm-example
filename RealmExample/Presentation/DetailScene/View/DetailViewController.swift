@@ -56,22 +56,6 @@ class DetailViewController: UIViewController {
     
     // MARK: - Private Method
     
-    @IBAction private func clickCancelButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction private func clickSaveButton(_ sender: Any) {
-        viewModel.didSave(todoItem:
-                .create(
-                    date: Date(),
-                    title: edtTitle.text,
-                    detail: edtDetail.text,
-                    importance: .init(rawValue: btnImportance.titleLabel?.text ?? "") ?? .none
-                )
-        )
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     private func setupView(item: TodoItemDTO) {
         edtTitle.text = item.title
         edtDetail.text = item.detail
@@ -93,6 +77,24 @@ class DetailViewController: UIViewController {
     
     private func hideDetailPlaceholder() {
         edtDetailBackground.isHidden = true
+    }
+    
+    // MARK: - User Interaction
+    
+    @IBAction private func clickCancelButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction private func clickSaveButton(_ sender: Any) {
+        viewModel.didSave(todoItem:
+                .create(
+                    date: Date(),
+                    title: edtTitle.text,
+                    detail: edtDetail.text,
+                    importance: .init(rawValue: btnImportance.titleLabel?.text ?? "") ?? .none
+                )
+        )
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
