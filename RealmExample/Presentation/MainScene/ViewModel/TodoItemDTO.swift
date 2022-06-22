@@ -32,6 +32,15 @@ struct TodoItemDTO {
     static func createEmpty() -> TodoItemDTO {
         return create(date: Date(), title: "", detail: "", importance: .none)
     }
+    
+    func toDomain() -> TodoItem {
+        return .init(
+            date: dateFormatter.date(from: self.date),
+            title: self.title,
+            detail: self.detail,
+            importance: Importance.init(rawValue: self.importance) ?? .none
+        )
+    }
 }
 
 private let dateFormatter: DateFormatter = {

@@ -61,7 +61,14 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction private func clickSaveButton(_ sender: Any) {
-        
+        viewModel.didSave(todoItem:
+                .create(
+                    date: Date(),
+                    title: edtTitle.text,
+                    detail: edtDetail.text,
+                    importance: .init(rawValue: btnImportance.titleLabel?.text ?? "") ?? .none
+                )
+        )
     }
     
     private func setupView(item: TodoItemDTO) {
