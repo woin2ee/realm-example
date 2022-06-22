@@ -30,7 +30,6 @@ final class DefaultDetailViewModel: DetailViewModel {
     }
     
     func didSave(todoItem: TodoItemDTO) {
-        print(todoItem.toDomain())
         todoRepository.save(todoItem: todoItem.toDomain())
     }
 }

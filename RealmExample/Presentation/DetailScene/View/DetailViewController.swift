@@ -69,6 +69,7 @@ class DetailViewController: UIViewController {
                     importance: .init(rawValue: btnImportance.titleLabel?.text ?? "") ?? .none
                 )
         )
+        self.dismiss(animated: true, completion: nil)
     }
     
     private func setupView(item: TodoItemDTO) {
