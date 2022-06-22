@@ -19,12 +19,6 @@ final class TodoTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.todoList.bind { [weak self] _ in self?.tableView.reloadData() }
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 }
 
@@ -46,8 +40,9 @@ extension TodoTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Detail", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        present(vc, animated: true)
-        vc.setupView(item: viewModel.todoList.value[indexPath.row])
+        let nc = storyboard.instantiateViewController(withIdentifier: "DetailNavigationController") as! UINavigationController
+        let vc = nc.viewControllers.first as! DetailViewController
+        vc.bind(viewModel: DefaultDetailViewModel(todoItem: .init(viewModel.todoList.value[indexPath.row])))
+        present(nc, animated: true)
     }
 }

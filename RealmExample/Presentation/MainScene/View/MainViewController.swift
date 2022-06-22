@@ -13,12 +13,11 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func addButtonClicked(_ sender: Any) {
+    @IBAction private func clickAddButton(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Detail", bundle: nil)
         let nc = storyboard.instantiateViewController(withIdentifier: "DetailNavigationController") as! UINavigationController
-        present(nc, animated: true) {
-            let vc = nc.viewControllers.first as! DetailViewController
-            vc.setupView(item: TodoItemDTO.createEmpty())
-        }
+        let vc = nc.viewControllers.first as! DetailViewController
+        vc.bind(viewModel: DefaultDetailViewModel())
+        present(nc, animated: true)
     }
 }

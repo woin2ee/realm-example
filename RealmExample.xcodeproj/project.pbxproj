@@ -12,6 +12,7 @@
 		E881AEBE285F374D00351543 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E881AEBD285F374D00351543 /* Detail.storyboard */; };
 		E881AEC0285F377300351543 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881AEBF285F377300351543 /* DetailViewController.swift */; };
 		E881AEC4285F54D600351543 /* TodoItemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E881AEC3285F54D600351543 /* TodoItemDTO.swift */; };
+		E8A236462862E72A00E0258A /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A236452862E72A00E0258A /* DetailViewModel.swift */; };
 		E8C7350B285DE44B00FA3DFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7350A285DE44B00FA3DFB /* AppDelegate.swift */; };
 		E8C7350D285DE44B00FA3DFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7350C285DE44B00FA3DFB /* SceneDelegate.swift */; };
 		E8C7350F285DE44B00FA3DFB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C7350E285DE44B00FA3DFB /* MainViewController.swift */; };
@@ -36,6 +37,7 @@
 		E881AEBD285F374D00351543 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		E881AEBF285F377300351543 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E881AEC3285F54D600351543 /* TodoItemDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemDTO.swift; sourceTree = "<group>"; };
+		E8A236452862E72A00E0258A /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		E8C73507285DE44B00FA3DFB /* RealmExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8C7350A285DE44B00FA3DFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8C7350C285DE44B00FA3DFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				E881AEBB285F373200351543 /* View */,
+				E8A236442862E71900E0258A /* ViewModel */,
 			);
 			path = DetailScene;
 			sourceTree = "<group>";
@@ -106,6 +109,14 @@
 				E881AEBD285F374D00351543 /* Detail.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E8A236442862E71900E0258A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E8A236452862E72A00E0258A /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		E8C734FE285DE44B00FA3DFB = {
@@ -408,6 +419,7 @@
 				E8C73533285E0BEB00FA3DFB /* DefaultTodoRepository.swift in Sources */,
 				E8C7350D285DE44B00FA3DFB /* SceneDelegate.swift in Sources */,
 				E8C73537285E0DEF00FA3DFB /* TodoStorage.swift in Sources */,
+				E8A236462862E72A00E0258A /* DetailViewModel.swift in Sources */,
 				E8C7353A285E0EFE00FA3DFB /* RealmTodoStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

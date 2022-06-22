@@ -70,14 +70,14 @@
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" text="Title" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Um8-mJ-ys1">
                                                 <rect key="frame" x="0.0" y="0.0" width="75.5" height="54.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <color key="textColor" systemColor="placeholderTextColor"/>
+                                                <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" text="description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tf4-hl-tlC">
                                                 <rect key="frame" x="0.0" y="84.5" width="130.5" height="46"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <color key="textColor" systemColor="placeholderTextColor"/>
+                                                <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
@@ -109,7 +109,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="aiJ-RK-hq5">
-                        <barButtonItem key="rightBarButtonItem" title="저장" id="qsJ-jL-gL2"/>
+                        <barButtonItem key="leftBarButtonItem" title="취소" id="edw-B0-ZGw">
+                            <connections>
+                                <action selector="clickCancelButton:" destination="Y6W-OH-hqX" id="Wzq-PF-afL"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="저장" id="qsJ-jL-gL2">
+                            <connections>
+                                <action selector="clickSaveButton:" destination="Y6W-OH-hqX" id="dde-Tp-r6G"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="btnImportance" destination="qpV-nW-ZZw" id="tWb-Wl-v0g"/>
@@ -142,8 +151,8 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="placeholderTextColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -11,7 +11,7 @@
         <!--List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="RealmExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="RealmExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,7 +35,7 @@
                     <navigationItem key="navigationItem" title="List" id="COB-tr-dDE">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus.circle" catalog="system" id="uhf-oN-KUj">
                             <connections>
-                                <action selector="addButtonClicked:" destination="BYZ-38-t0r" id="ZQt-ip-nji"/>
+                                <action selector="clickAddButton:" destination="BYZ-38-t0r" id="ksh-OR-dJ0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -47,7 +47,7 @@
         <!--Todo Table View Controller-->
         <scene sceneID="jWi-rZ-9kW">
             <objects>
-                <tableViewController id="gtG-xh-i4T" customClass="TodoTableViewController" customModule="RealmExample" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TodoTableViewController" id="gtG-xh-i4T" customClass="TodoTableViewController" customModule="RealmExample" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" id="d1a-59-f0c">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -113,7 +113,6 @@
         <!--Navigation Controller-->
         <scene sceneID="Yk6-Ft-S1B">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5TC-Zf-mrr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tc9-9R-2Vt" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="N3a-h1-LVq">
@@ -125,6 +124,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="nhv-8E-hn1"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5TC-Zf-mrr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="73.913043478260875" y="124.55357142857142"/>
         </scene>
