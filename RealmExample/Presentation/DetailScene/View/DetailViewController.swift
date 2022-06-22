@@ -9,8 +9,18 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    @IBOutlet private weak var edtTitle: UITextView!
-    @IBOutlet private weak var edtDetail: UITextView!
+    @IBOutlet private weak var edtTitle: UITextView! {
+        didSet {
+            edtTitle.delegate = self
+        }
+    }
+    @IBOutlet weak var edtTitleBackground: UITextField!
+    @IBOutlet private weak var edtDetail: UITextView! {
+        didSet {
+            edtDetail.delegate = self
+        }
+    }
+    @IBOutlet weak var edtDetailBackground: UITextField!
     @IBOutlet private weak var btnImportance: UIButton!
     @IBOutlet private weak var lblDate: UILabel!
     
@@ -24,10 +34,24 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.todoItem.bind { [weak self] item in self?.setupView(item: item) }
+        initTextViews()
     }
     
     func bind(viewModel: DetailViewModel) {
         self.viewModel = viewModel
+    }
+    
+    func initTextViews() {
+        if viewModel.todoItem.value.title.isEmpty {
+            showTitlePlaceholder()
+        } else {
+            hideTitlePlaceholder()
+        }
+        if viewModel.todoItem.value.detail.isEmpty {
+            showDetailPlaceholder()
+        } else {
+            hideDetailPlaceholder()
+        }
     }
     
     // MARK: - Private Method
@@ -45,5 +69,58 @@ class DetailViewController: UIViewController {
         edtDetail.text = item.detail
         btnImportance.setTitle(item.importance, for: .normal)
         lblDate.text = item.date
+    }
+    
+    private func showTitlePlaceholder() {
+        edtTitleBackground.isHidden = false
+    }
+    
+    private func hideTitlePlaceholder() {
+        edtTitleBackground.isHidden = true
+    }
+    
+    private func showDetailPlaceholder() {
+        edtDetailBackground.isHidden = false
+    }
+    
+    private func hideDetailPlaceholder() {
+        edtDetailBackground.isHidden = true
+    }
+}
+
+// MARK: - UITextViewDelegate
+
+extension DetailViewController: UITextViewDelegate {
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        switch textView.tag {
+        case 0:
+            if textView.text.isEmpty {
+                hideTitlePlaceholder()
+            }
+        case 1:
+            if textView.text.isEmpty {
+                hideDetailPlaceholder()
+            }
+        default:
+            return false
+        }
+        
+        return true
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        switch textView.tag {
+        case 0:
+            if textView.text.isEmpty {
+                showTitlePlaceholder()
+            }
+        case 1:
+            if textView.text.isEmpty {
+                showDetailPlaceholder()
+            }
+        default:
+            return
+        }
     }
 }
