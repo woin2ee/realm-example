@@ -11,7 +11,7 @@ struct TodoItemDTO {
     var id: String?
     var date: Date
     var formattedDate: String {
-        dateFormatter.string(from: self.date ?? Date())
+        dateFormatter.string(from: self.date)
     }
     var title: String
     var detail: String
