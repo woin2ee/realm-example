@@ -13,16 +13,21 @@ final class TodoItem: Object {
     @Persisted var date: Date?
     @Persisted var title: String
     @Persisted var detail: String
-    @Persisted var importance: String
+    @Persisted private var importance: String
     
     var importanceEnum: Importance {
         get { return Importance(rawValue: importance) ?? .none }
         set { importance = newValue.rawValue }
     }
     
-    convenience init(date: Date? = nil, title: String = "", detail: String = "", importance: Importance = .none) {
+    convenience init(id: String, date: Date? = nil, title: String = "", detail: String = "", importance: Importance = .none) {
         self.init()
         
+        do {
+            self.id = try .init(string: id)
+        } catch {
+            self.id = .generate()
+        }
         self.date = date
         self.title = title
         self.detail = detail

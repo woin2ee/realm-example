@@ -41,6 +41,7 @@ final class DefaultMainViewModel: MainViewModel {
     func mapToDTO(by todoList: Results<TodoItem>) {
         self.todoList.value = todoList.map {
             TodoItemDTO.create(
+                id: $0.id.stringValue,
                 date: $0.date,
                 title: $0.title,
                 detail: $0.detail,

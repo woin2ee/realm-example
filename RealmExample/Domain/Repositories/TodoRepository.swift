@@ -10,5 +10,6 @@ import RealmSwift
 
 protocol TodoRepository {
     func save(todoItem item: TodoItem)
+    func update(todoItem item: TodoItem)
     func bind(behavior: @escaping (Results<TodoItem>) -> Void) -> NotificationToken
 }

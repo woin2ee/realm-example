@@ -9,6 +9,7 @@ import Foundation
 
 protocol DetailViewModelInput {
     func didSave(todoItem: TodoItemDTO)
+    func didUpdate(todoItem: TodoItemDTO)
 }
 
 protocol DetailViewModelOutput {
@@ -37,5 +38,9 @@ final class DefaultDetailViewModel: DetailViewModel {
     
     func didSave(todoItem: TodoItemDTO) {
         todoRepository.save(todoItem: todoItem.toDomain())
+    }
+    
+    func didUpdate(todoItem: TodoItemDTO) {
+        todoRepository.update(todoItem: todoItem.toDomain())
     }
 }

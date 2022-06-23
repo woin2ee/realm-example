@@ -8,4 +8,9 @@ target 'RealmExample' do
   # Pods for RealmExample
 	pod 'RealmSwift'
 
+	target 'RealmExampleTests' do
+		inherit! :search_paths
+		# Pods for testing
+	end
+
 end

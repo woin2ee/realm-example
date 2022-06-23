@@ -86,14 +86,20 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction private func clickSaveButton(_ sender: Any) {
-        viewModel.didSave(todoItem:
-                .create(
-                    date: Date(),
-                    title: edtTitle.text,
-                    detail: edtDetail.text,
-                    importance: .init(rawValue: btnImportance.titleLabel?.text ?? "") ?? .none
-                )
+        let dto = TodoItemDTO.create(
+            id: viewModel.todoItem.value.id,
+            date: Date(),
+            title: edtTitle.text,
+            detail: edtDetail.text,
+            importance: .init(rawValue: btnImportance.titleLabel?.text ?? "") ?? .none
         )
+        
+        if viewModel.todoItem.value.id == nil {
+            viewModel.didSave(todoItem: dto)
+        } else {
+            viewModel.didUpdate(todoItem: dto)
+        }
+        
         self.dismiss(animated: true, completion: nil)
     }
 }

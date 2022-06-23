@@ -27,14 +27,25 @@ extension RealmTodoStorage: TodoStorage {
         }
     }
     
+    func update(todoItem item: TodoItem) {
+        let items = realm.objects(TodoItem.self)
+        guard let targetItem = items.filter({ $0.id.isEqual(item.id) }).first else { return }
+        
+        try! realm.write {
+            targetItem.title = item.title
+            targetItem.detail = item.detail
+            targetItem.importanceEnum = item.importanceEnum
+        }
+    }
+    
     func bind(behavior: @escaping (Results<TodoItem>) -> Void) -> NotificationToken {
-        let todoList = realm.objects(TodoItem.self)
-        return todoList.observe { changes in
+        let items = realm.objects(TodoItem.self)
+        return items.observe { changes in
             switch changes {
-            case .initial(let todoList):
-                behavior(todoList)
-            case .update(let todoList, _, _, _):
-                behavior(todoList)
+            case .initial(let items):
+                behavior(items)
+            case .update(let items, _, _, _):
+                behavior(items)
             case .error(let error):
                 fatalError(error.localizedDescription)
             }

@@ -22,6 +22,10 @@ extension DefaultTodoRepository: TodoRepository {
         persistentStorage.save(todoItem: item)
     }
     
+    func update(todoItem item: TodoItem) {
+        persistentStorage.update(todoItem: item)
+    }
+    
     func bind(behavior: @escaping (Results<TodoItem>) -> Void) -> NotificationToken {
         persistentStorage.bind(behavior: behavior)
     }
