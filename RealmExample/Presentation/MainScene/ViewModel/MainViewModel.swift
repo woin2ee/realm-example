@@ -42,7 +42,7 @@ final class DefaultMainViewModel: MainViewModel {
         self.todoList.value = todoList.map {
             TodoItemDTO.init(
                 id: $0.id.stringValue,
-                date: $0.date,
+                date: $0.date ?? Date(),
                 title: $0.title,
                 detail: $0.detail,
                 importance: $0.importanceEnum.rawValue

@@ -29,7 +29,7 @@ final class DefaultDetailViewModel: DetailViewModel {
     // MARK: - Init
     
     init(todoRepositoy: TodoRepository = DefaultTodoRepository(),
-         todoItem: Observable<TodoItemDTO> = .init(.init(title: "", detail: "", importance: "없음"))) {
+         todoItem: Observable<TodoItemDTO> = .init(.init(date: Date(), title: "", detail: "", importance: "없음"))) {
         self.todoRepository = todoRepositoy
         self.todoItem = todoItem
     }

@@ -9,7 +9,7 @@ import Foundation
 
 struct TodoItemDTO {
     var id: String?
-    var date: Date?
+    var date: Date
     var formattedDate: String {
         dateFormatter.string(from: self.date ?? Date())
     }
