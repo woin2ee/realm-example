@@ -21,7 +21,7 @@ class TodoTableViewCell: UITableViewCell {
     }
     
     func fill(todoItem: TodoItemDTO) {
-        lblDate.text = todoItem.date
+        lblDate.text = todoItem.formattedDate
         lblTitle.text = todoItem.title
         lblImportance.text = todoItem.importance
     }

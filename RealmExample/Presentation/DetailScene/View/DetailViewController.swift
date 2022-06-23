@@ -60,7 +60,7 @@ class DetailViewController: UIViewController {
         edtTitle.text = item.title
         edtDetail.text = item.detail
         btnImportance.setTitle(item.importance, for: .normal)
-        lblDate.text = item.date
+        lblDate.text = item.formattedDate
     }
     
     private func showTitlePlaceholder() {
@@ -86,12 +86,12 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction private func clickSaveButton(_ sender: Any) {
-        let dto = TodoItemDTO.create(
+        let dto = TodoItemDTO.init(
             id: viewModel.todoItem.value.id,
-            date: Date(),
+            date: viewModel.todoItem.value.date,
             title: edtTitle.text,
             detail: edtDetail.text,
-            importance: .init(rawValue: btnImportance.titleLabel?.text ?? "") ?? .none
+            importance: btnImportance.titleLabel?.text ?? "없음"
         )
         
         if viewModel.todoItem.value.id == nil {
