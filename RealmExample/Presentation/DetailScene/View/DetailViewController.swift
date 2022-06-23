@@ -79,6 +79,11 @@ class DetailViewController: UIViewController {
         edtDetailBackground.isHidden = true
     }
     
+    private func isNewItem() -> Bool {
+        if viewModel.todoItem.value.id == nil { return true }
+        else { return false }
+    }
+    
     // MARK: - User Interaction
     
     @IBAction private func clickCancelButton(_ sender: Any) {
@@ -94,7 +99,7 @@ class DetailViewController: UIViewController {
             importance: btnImportance.titleLabel?.text ?? "없음"
         )
         
-        if viewModel.todoItem.value.id == nil {
+        if isNewItem() {
             viewModel.didSave(todoItem: dto)
         } else {
             viewModel.didUpdate(todoItem: dto)
