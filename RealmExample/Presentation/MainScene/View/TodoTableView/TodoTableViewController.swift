@@ -23,7 +23,6 @@ final class TodoTableViewController: UITableViewController {
     
     private func reloadTable() {
         tableView.reloadData()
-        print("reload")
     }
 }
 

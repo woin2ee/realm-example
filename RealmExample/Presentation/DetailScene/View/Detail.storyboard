@@ -46,20 +46,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
-                                    <view contentMode="scaleToFill" horizontalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="3Qc-O9-oOz">
-                                        <rect key="frame" x="109" y="0.0" width="144" height="128"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="3Qc-O9-oOz" firstAttribute="top" secondItem="aYx-8l-N8C" secondAttribute="top" id="Jz4-Xg-6MN"/>
-                                    <constraint firstAttribute="bottom" secondItem="3Qc-O9-oOz" secondAttribute="bottom" id="Wg7-y0-L1C"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="3Qc-O9-oOz"/>
-                                    </mask>
-                                </variation>
                             </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHe-ht-77L">
                                 <rect key="frame" x="0.0" y="166" width="414" height="696"/>

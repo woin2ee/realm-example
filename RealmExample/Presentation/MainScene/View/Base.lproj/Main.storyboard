@@ -53,42 +53,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TodoCell" id="afg-fj-6f8" customClass="TodoTableViewCell" customModule="RealmExample" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="35.5"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="37"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="afg-fj-6f8" id="vn9-96-Sz3">
-                                    <rect key="frame" x="0.0" y="0.0" width="385.5" height="35.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="385.5" height="37"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iSp-Yq-cBV">
-                                            <rect key="frame" x="10" y="0.0" width="365.5" height="35.5"/>
+                                            <rect key="frame" x="10" y="8" width="365.5" height="21"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="2022-06-19" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xv1-bc-kOA">
-                                                    <rect key="frame" x="0.0" y="7.5" width="93.5" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="0.5" width="93.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Test-title-long-long-long-long-long" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Tp-Ws-HgA">
-                                                    <rect key="frame" x="103.5" y="7.5" width="222.5" height="20.5"/>
+                                                    <rect key="frame" x="103.5" y="0.5" width="222.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="중간" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arh-a8-Lgp">
-                                                    <rect key="frame" x="336" y="7.5" width="29.5" height="20.5"/>
+                                                    <rect key="frame" x="336" y="0.5" width="29.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" systemColor="systemOrangeColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="35" id="fZ9-d5-S0j"/>
-                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="iSp-Yq-cBV" secondAttribute="bottom" id="7Va-TS-Hlq"/>
-                                        <constraint firstItem="iSp-Yq-cBV" firstAttribute="top" secondItem="vn9-96-Sz3" secondAttribute="top" id="9C9-bZ-YPd"/>
+                                        <constraint firstAttribute="bottom" secondItem="iSp-Yq-cBV" secondAttribute="bottom" constant="8" id="7Va-TS-Hlq"/>
+                                        <constraint firstItem="iSp-Yq-cBV" firstAttribute="top" secondItem="vn9-96-Sz3" secondAttribute="top" constant="8" id="9C9-bZ-YPd"/>
                                         <constraint firstItem="iSp-Yq-cBV" firstAttribute="leading" secondItem="vn9-96-Sz3" secondAttribute="leading" constant="10" id="BkJ-rD-LaC"/>
                                         <constraint firstAttribute="trailing" secondItem="iSp-Yq-cBV" secondAttribute="trailing" constant="10" id="Sf9-cX-ZpM"/>
                                     </constraints>
